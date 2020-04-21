@@ -5,6 +5,9 @@ def print(s):
 
 def run(s):
     s.preventDefault()
-    exec(document['python'].value)
+    try:
+        exec(document['python'].value)
+    except Exception as e:
+        print(f'{e}')
 
 document['form'].bind('submit', run)
